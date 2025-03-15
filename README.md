@@ -16,6 +16,51 @@ Hobaa is a tool that allows you to use websites as desktop applications. The app
 - WebView2 (github.com/jchv/go-webview2)
 - Windows API (golang.org/x/sys)
 
+## Build Instructions
+
+### Prerequisites
+
+- Go 1.16 or higher
+- go-winres (`go install github.com/tc-hib/go-winres@latest`)
+- UPX (optional, for executable compression)
+
+### Building from Source
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/kemalersin/hobaa.git
+   cd hobaa
+   ```
+
+2. Run the build script:
+   ```
+   build.bat
+   ```
+
+   This will:
+   - Generate resources using go-winres
+   - Clean up old builds
+   - Run go mod tidy to manage dependencies
+   - Build the executable with optimizations
+   - Compress the executable with UPX (if available)
+
+3. For testing with multiple website configurations:
+   ```
+   build.bat test
+   ```
+   
+   This will create additional test executables (github.exe, twitter.exe) that can be used to test the application's ability to load different websites based on the executable name.
+
+### Build Options
+
+The build script uses the following optimizations:
+
+- CGO_ENABLED=0: Disables CGO for a more portable build
+- GOOS=windows and GOARCH=amd64: Targets 64-bit Windows
+- -ldflags="-s -w -H=windowsgui": Strips debug information and hides the console window
+- -trimpath: Removes file path information from the binary
+- UPX compression: Reduces the executable size (when available)
+
 ## Usage
 
 1. Download the application

@@ -4,3 +4,43 @@ globs:
 alwaysApply: false
 ---
 ## Done
+
+1. Create an empty Windows application.
+2. The application should only contain a WebView.
+3. Use `default.ico` from the Resources directory as the application icon.
+4. Include `default.ico` and `rcedit.exe` from the Resources directory as embedded resources.
+5. At startup, create a directory in "AppData" with the same name as the application if it doesn't exist.
+6. At startup, create an "icons" directory inside the application's AppData directory if it doesn't exist.
+7. At startup, create `rcedit.exe` in the application's AppData directory from embedded resources if it doesn't already exist.
+8. At startup, create `hobaa.ico` in the "icons" directory within AppData using `default.ico` if it doesn't already exist.
+9. At startup, create a directory specifically for WebView within the application's AppData directory if it doesn't already exist.
+10. Users may rename the application's EXE file. At startup, check if the current EXE filename exists in the `sites.json` file located in the application's AppData directory (refer to the example `sites.json` file in the project's root directory for formatting).
+11. If the current EXE filename is not listed in AppData's `sites.json` or if its `"is_active"` value is set to `false`:
+	- Check if the current EXE filename exists in `sites.json` located in the application's working directory (this file may not exist).
+		- If it exists, update AppData's `sites.json` with this information without modifying existing `"width"` and `"height"` values (both values are optional). If an icon URL is specified and no corresponding icon file exists in AppData's "icons" directory, download the iconck the GitHub-hosted `sites.json`: [https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/sites.json](mdc:https:/raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/sites.json).
+			- If found on GitHub, update AppData's `sites.json` with this information without modifying existing `"width"` and `"height"` values (both values are optional). If an icon URL is specified and no corresponding icon file exists in AppData's "icons" directory, download the icon from the provided URL.
+	- If the current EXE filename is not found in either the working directory or GitHub:
+		- Check AppData's `sites.json`. If not present:
+			- Check if the current EXE filename is formatted as a URL.
+				- If it's not a URL, use the "hobaa.ico" icon from AppData's "icons" directory.
+				- If it is a URL, attempt to download the appropriate favicon from the webpage.
+					- If a favicon is downloaded but not in ICO format, convert it into a valid ICO file (do not use PNG files disguised as ICO).
+					- If the favicon download fails, use the "hobaa.ico" icon from AppData's "icons" directory.
+			- Add a new entry to AppData's `sites.json`.
+	- If a new icon file has been downloaded:
+		- Rename it to match the current EXE filename if necessary.
+		- Prepare the application for closure.
+		- After fully closing the application, execute `rcedit.exe` located in AppData as follows:
+			- `rcedit.exe "[Full Path of Current Application EXE]" --set-icon "[Full Path of Icon File in AppData Icons Directory]"`
+		- After `rcedit.exe` completes execution, restart the application using the `"--force"` parameter.
+12. If the EXE filename exists in `sites.json` and its `"is_active"` value is `true`, or if the application is started with the `"--force"` parameter:
+	- If the `"--force"` parameter is not provided, launch the application directly.
+	- If the `"--force"` parameter is provided:
+		- Mark the current EXE filename's `"is_active"` value as `true` in AppData's `sites.json` and set all other sites as inactive.
+		- Clear Windows' application cache without restarting Windows Explorer.
+		- Launch the application.
+	- Replace the window title icon with the current application icon.
+	- Set the application window size based on `"width"` and `"height"` values in AppData's `sites.json`. If no values are provided, default to width: 1920 and height: 1080.
+	- Set the window title text using the `"title"` value from AppData's `sites.json`.
+	- Load the URL specified for the current EXE filename in AppData's `sites.json` into the WebView.
+13. When a link is clicked on the WebView-displayed page, add a back button that appears upon mouse hover in the top-left corner.	

@@ -10,3 +10,4 @@ alwaysApply: true
 - Separate each functionality into appropriate modules/packages.
 - Module/package line count should not significantly exceed 500 lines.
 - Aim to produce reusable code and avoid repetition.
+- Always create builds using the [build.bat](mdc:build.bat) file.

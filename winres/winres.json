@@ -11,7 +11,7 @@
           "name": "Hobaa",
           "version": "0.1.2.0"
         },
-        "description": "Hobaa! - Web Sitelerini Masaüstü Uygulaması Gibi Çalıştırın",
+        "description": "Hobaa! - Run websites as desktop applications.",
         "minimum-os": "win10",
         "execution-level": "as invoker",
         "ui-access": false,
@@ -38,9 +38,9 @@
         },
         "info": {
           "0409": {
-            "Comments": "Hobaa! Web sitelerini masaüstü uygulaması gibi çalıştırın",
+            "Comments": "Hobaa! Run websites as desktop applications.",
             "CompanyName": "Hobaa!",
-            "FileDescription": "Hobaa! - Web Sitelerini Masaüstü Uygulaması Gibi Çalıştırın",
+            "FileDescription": "Hobaa! - Run websites as desktop applications.",
             "FileVersion": "0.1.2.0",
             "InternalName": "Hobaa",
             "LegalCopyright": "Copyright © 2025 Kemal Ersin",
