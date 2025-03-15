@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Tech Stack
+
+- Development language: Go
+- WebView: [github.com/jchv/go-webview2](mdc:https:/github.com/jchv/go-webview2)
+- Windows API: [golang.org/x/sys](mdc:https:/golang.org/x/sys)
+- First, read the [to-do.mdc](mdc:.cursor/rules/to-do.mdc) file and analyze the project.

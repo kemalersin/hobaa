@@ -1,0 +1,110 @@
+[
+  {
+    "name": "hobaa",
+    "title": "Google",
+    "url": "https://www.google.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/youtube.ico"
+  },
+  {
+    "name": "x",
+    "title": "X (Twitter)",
+    "url": "https://twitter.com",
+    "width": 792,
+    "height": 1440,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/twitter.ico"
+  },
+  {
+    "name": "twitter",
+    "title": "Twitter",
+    "url": "https://twitter.com",
+    "width": 792,
+    "height": 1440,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/twitter.ico"
+  },
+  {
+    "name": "instagram",
+    "title": "Instagram",
+    "url": "https://www.instagram.com",
+    "width": 745,
+    "height": 1300,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/instagram.ico"
+  },
+  {
+    "name": "linkedin",
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com",
+    "width": 1798,
+    "height": 1192,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/linkedin.ico"
+  },
+  {
+    "name": "facebook",
+    "title": "Facebook",
+    "url": "https://www.facebook.com",
+    "width": 1180,
+    "height": 1340,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/facebook.ico"
+  },
+  {
+    "name": "youtube",
+    "title": "YouTube",
+    "url": "https://www.youtube.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/youtube.ico"
+  },
+  {
+    "name": "reddit",
+    "title": "Reddit",
+    "url": "https://www.reddit.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/reddit.ico"
+  },
+  {
+    "name": "github",
+    "title": "GitHub",
+    "url": "https://github.com",
+    "width": 1310,
+    "height": 1600,
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/github.ico"
+  },
+  {
+    "name": "gmail",
+    "title": "Gmail",
+    "url": "https://mail.google.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/gmail.ico"
+  },
+  {
+    "name": "maps",
+    "title": "Google Maps",
+    "url": "https://maps.google.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/maps.ico"
+  },
+  {
+    "name": "drive",
+    "title": "Google Drive",
+    "url": "https://drive.google.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/drive.ico"
+  },
+  {
+    "name": "docs",
+    "title": "Google Docs",
+    "url": "https://docs.google.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/docs.ico"
+  },
+  {
+    "name": "dropbox",
+    "title": "Dropbox",
+    "url": "https://dropbox.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/dropbox.ico"
+  },
+  {
+    "name": "chatgpt",
+    "title": "ChatGPT",
+    "url": "https://chat.openai.com",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/chatgpt.ico"
+  },
+  {
+    "name": "eksisozluk",
+    "url": "https://eksisozluk.com",
+    "title": "Ekşisözlük",
+    "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/eksisozluk.ico"
+  }
+]

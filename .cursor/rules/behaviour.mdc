@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Behaviour
+
+- Never add features unless I explicitly specify them.
+- Never make changes or corrections that I have not specifically requested.
+- Separate each functionality into appropriate modules/packages.
+- Module/package line count should not significantly exceed 500 lines.
+- Aim to produce reusable code and avoid repetition.
