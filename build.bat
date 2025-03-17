@@ -5,6 +5,12 @@ REM Set environment variables for optimized build
 set CGO_ENABLED=0
 set GOOS=windows
 set GOARCH=amd64
+set GOFLAGS=-mod=mod
+
+REM Install required dependencies
+echo Installing required dependencies...
+go install github.com/tc-hib/go-winres@latest
+go get github.com/jchv/go-webview2@latest
 
 REM Generate resources using go-winres
 echo Generating resources with go-winres...

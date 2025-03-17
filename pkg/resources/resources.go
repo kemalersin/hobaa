@@ -4,8 +4,11 @@ package resources
 import (
 	"embed"
 	"io"
+	"io/fs"
+	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 // embeddedFiles holds the embedded resources
@@ -109,4 +112,90 @@ func CopyDefaultIcon(execDir, targetPath string) error {
 // CopyRcedit copies the rcedit.exe to the specified path
 func CopyRcedit(execDir, targetPath string) error {
 	return CopyEmbeddedFile("resources/rcedit.exe", targetPath)
-} 
+}
+
+// CopySitesJson copies the sites.json file to the specified path
+func CopySitesJson(targetPath string) error {
+	return CopyEmbeddedFile("resources/sites.json", targetPath)
+}
+
+// CopyAllIcons copies all icon files from the embedded resources to the target directory
+func CopyAllIcons(targetDir string) error {
+	// Create target directory if it doesn't exist
+	if err := os.MkdirAll(targetDir, 0755); err != nil {
+		return err
+	}
+
+	// Walk through the embedded icons directory
+	return fs.WalkDir(embeddedFiles, "resources/icons/ico", func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Skip directories
+		if d.IsDir() {
+			return nil
+		}
+
+		// Get the icon filename
+		iconName := filepath.Base(path)
+
+		// Create the target path
+		targetPath := filepath.Join(targetDir, iconName)
+
+		// Check if the icon already exists
+		if _, err := os.Stat(targetPath); os.IsNotExist(err) {
+			// Copy the icon file
+			return CopyEmbeddedFile(path, targetPath)
+		}
+
+		return nil
+	})
+}
+
+// EnsureIconExists ensures that a specific icon exists in the target directory
+func EnsureIconExists(iconName string, targetDir string) error {
+	// Create the full target path
+	targetPath := filepath.Join(targetDir, iconName)
+
+	// Check if the icon already exists
+	if _, err := os.Stat(targetPath); os.IsNotExist(err) {
+		// If icon path starts with ico/, try to download from GitHub
+		if strings.HasPrefix(iconName, "ico/") {
+			// Remove ico/ prefix
+			iconName = strings.TrimPrefix(iconName, "ico/")
+			// Create GitHub URL
+			githubURL := "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/" + iconName
+
+			// Download the icon
+			resp, err := http.Get(githubURL)
+			if err != nil {
+				return err
+			}
+			defer resp.Body.Close()
+
+			// Create destination file
+			destFile, err := os.Create(targetPath)
+			if err != nil {
+				return err
+			}
+			defer destFile.Close()
+
+			// Copy the file
+			_, err = io.Copy(destFile, resp.Body)
+			if err != nil {
+				return err
+			}
+
+			return destFile.Sync()
+		}
+
+		// Try to find the icon in the embedded resources
+		embeddedPath := filepath.Join("resources/icons/ico", iconName)
+
+		// Copy the icon file
+		return CopyEmbeddedFile(embeddedPath, targetPath)
+	}
+
+	return nil
+}
