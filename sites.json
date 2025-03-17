@@ -10,7 +10,7 @@
     "title": "X (Twitter)",
     "url": "https://twitter.com",
     "width": 792,
-    "height": 1440,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/twitter.ico"
   },
   {
@@ -18,7 +18,7 @@
     "title": "Twitter",
     "url": "https://twitter.com",
     "width": 792,
-    "height": 1440,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/twitter.ico"
   },
   {
@@ -26,7 +26,7 @@
     "title": "Instagram",
     "url": "https://www.instagram.com",
     "width": 745,
-    "height": 1300,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/instagram.ico"
   },
   {
@@ -34,7 +34,7 @@
     "title": "LinkedIn",
     "url": "https://www.linkedin.com",
     "width": 1798,
-    "height": 1192,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/linkedin.ico"
   },
   {
@@ -42,7 +42,7 @@
     "title": "Facebook",
     "url": "https://www.facebook.com",
     "width": 1180,
-    "height": 1340,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/facebook.ico"
   },
   {
@@ -62,7 +62,7 @@
     "title": "GitHub",
     "url": "https://github.com",
     "width": 1310,
-    "height": 1600,
+    "height": 1000,
     "icon": "https://raw.githubusercontent.com/kemalersin/hobaa/refs/heads/main/resources/icons/ico/github.ico"
   },
   {
